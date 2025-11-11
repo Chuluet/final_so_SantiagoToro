@@ -1,7 +1,7 @@
 #!/bin/bash
 
-REPO_URL="https://github.com/Chuluet/Taller-EC2.git"
-PROJECT_DIR="/home/ubuntu/taller-ec2"
+REPO_URL="https://github.com/Chuluet/final_so_SantiagoToro.git"
+PROJECT_DIR="/home/ubuntu/final_so_SantiagoToro/punto_2"
 ENV_NAME="fastapi_env"
 CONDA_PATH="/home/ubuntu/miniconda3"
 
@@ -35,8 +35,8 @@ fi
 $CONDA_PATH/bin/conda run -n $ENV_NAME pip install --upgrade pip
 $CONDA_PATH/bin/conda run -n $ENV_NAME pip install -r requirements.txt
 
-if [ -f "$PROJECT_DIR/fastapi.srv" ]; then
-    sudo cp $PROJECT_DIR/fastapi.srv /etc/systemd/system/fastapi.service
+if [ -f "$PROJECT_DIR/systemd.service" ]; then
+    sudo cp $PROJECT_DIR/systemd.service /etc/systemd/system/systemd.service
 fi
 
 sudo systemctl daemon-reload
