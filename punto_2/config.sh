@@ -35,10 +35,11 @@ fi
 $CONDA_PATH/bin/conda run -n $ENV_NAME pip install --upgrade pip
 $CONDA_PATH/bin/conda run -n $ENV_NAME pip install -r requirements.txt
 
-if [ -f "$PROJECT_DIR/systemd.service" ]; then
-    sudo cp $PROJECT_DIR/systemd.service /etc/systemd/system/systemd.service
+if [ -f "$PROJECT_DIR/fastapi.service" ]; then
+    sudo cp $PROJECT_DIR/fastapi.service /etc/systemd/system/fastapi.service
 fi
 
 sudo systemctl daemon-reload
-sudo systemctl enable systemd
-sudo systemctl restart systemd
+sudo systemctl enable fastapi.service
+sudo systemctl restart fastapi.service
+
