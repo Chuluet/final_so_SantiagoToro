@@ -40,5 +40,5 @@ if [ -f "$PROJECT_DIR/systemd.service" ]; then
 fi
 
 sudo systemctl daemon-reload
-sudo systemctl enable fastapi
-sudo systemctl restart fastapi
+sudo systemctl enable systemd
+sudo systemctl restart systemd
